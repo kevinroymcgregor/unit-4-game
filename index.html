@@ -4,16 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script  src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/game.js"></script>
     <title>Crystal Collector</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div>
-
+            <div class="col-12">
+                <h1>Number to guess: <span id="number-holder"></span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <img class="img-fluid crystal" id='crystal1' src="assets/images/Blue_Crystal.jpg" alt="Blue_Crystal">
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="img-fluid crystal" id='crystal2' src="assets/images/Red_Crystal.jpg" alt="Red_Crystal" >
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="img-fluid crystal" id='crystal3' src="assets/images/White_Crystal.jpg" alt="White_Crystal" >
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="img-fluid crystal" id='crystal4' src="assets/images/Purple_Crystal.jpg" alt="Red_Crystal" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <h1>Score: <span id="scoreHolder">0</span></h1>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h1>Wins: <span id="winHolder">0</span></h1>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h1>Losses: <span id="lossHolder">0</span></h1> 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2>Instructions</h2>
+                <p>
+                    Each crystal has a random number assigned. 
+                    Every time you click a crystal, that crystal's 
+                    value will be added to your score.
+                    Your goal is to get your score to add up 
+                    to the number at the top of the page without 
+                    going over.  Good luck!
+                </p>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            start();
+            // $('.crystal').click(console.log(this.id));
+            $('#crystal1').click(guessC1);
+            $('#crystal2').click(guessC2);
+            $('#crystal3').click(guessC3);
+            $('#crystal4').click(guessC4);
+        });
+    </script>
 </body>
 </html>
